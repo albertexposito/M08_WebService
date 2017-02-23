@@ -9,6 +9,7 @@ import bd.Coordenadas;
 import bd.Conexion;
 import com.google.gson.Gson;
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -81,7 +82,7 @@ public class GenericResource {
     ////////////////
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public boolean insertarCoordenadas(String loc) {
+    public boolean insertarCoordenadas(String loc) throws ParseException {
         Conexion conexion = new Conexion();
         Gson gson = new Gson();
         Coordenadas coords;
